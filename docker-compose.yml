@@ -1,17 +1,8 @@
 version: '3.3'
-
-# services:
-#  django:
-#   build: .
-#   ports:
-#     - "8000:8000"
- # command: python3 manage.py runserver
-
 services:
  django:
   image: 8149080856/face:v1
   ports:
     - "8000:8000"
-  volumes:
-    - .:/app
-  command: python3 manage.py runserver 0.0.0.0:8000
+  # volumes:
+  #   - .:/app
