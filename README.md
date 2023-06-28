@@ -1,5 +1,5 @@
 #   Face-Detection-Minor
-
+# Face-Detection-Minor
 This is a Django project which is developed to detect the face by uploading the image.
 We can run this Application in different ways as defined Below - 
 
