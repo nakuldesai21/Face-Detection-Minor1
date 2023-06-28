@@ -1,0 +1,30 @@
+name: Build and push docker image #name of workflow
+on: #To automatically triger a workflow
+  push: #(event / action)
+    branches: #for specific branch
+      - Face-Detection-Minor/docker-compose
+jobs: #(workflow-jobs,runner,steps)
+  build:
+    runs-on:  ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+                images: 8149080856/devops_21_practice
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: 8149080856/devops_21_practice:updated
