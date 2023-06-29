@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-mypod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: deployment
+  template:
+    metadata:
+      labels:
+        app: deployment
+    spec:
+      containers:
+      - name: deployment-pod
+        image:  8149080856/face:v1
+        ports:
+        - containerPort: 8000

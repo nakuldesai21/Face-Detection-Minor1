@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset-mypod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: replicasss
+  template:
+    metadata:
+      labels:
+        app: replicasss
+    spec:
+      containers:
+      - name: replicas-pod
+        image:  8149080856/face:v1
