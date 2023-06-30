@@ -2,7 +2,7 @@ name:   CI pipeline by using github action to build and push DockerImage
 on:
         push:
                 branches:
-                 -      Face-Detection-Minor/docker-compose
+                 -      Face-Detection-Minor/replicaset
 jobs:
         build:
                 runs-on:        ubuntu-latest
