@@ -3,7 +3,7 @@ kind: ReplicaSet
 metadata:
   name: replicaset-mypod
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: replicasss
